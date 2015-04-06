@@ -4,9 +4,7 @@ Build a working implementation of Tic Tack Toe.
 Getting Started
 ---
 1. [Fork The Repo](https://github.com//G3N7/TicTacToeKata.TypeScript/fork)
-2. Implementing the classes marked with **#implementThis**
-* Yours/YourTurnService
-* Yours/YourGameResultService
+2. Implementing the classes marked with **#implementThis** (Yours/YourTurnService.ts, Yours/YourGameResultService.ts)
 3. Make sure all the tests pass in **YourTests.html**
 4. Use your game in **YourTicTacToe.html**
 
