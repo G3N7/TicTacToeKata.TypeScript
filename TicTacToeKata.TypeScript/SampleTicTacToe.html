@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Sample Tic Tac Toe</title>
+
+	<link rel="stylesheet" href="content/app.css">
+
+	<script src="GameBoard.js"></script>
+	<script src="Marker.js"></script>
+	<script src="GameResult.js"></script>
+	<script src="TurnResult.js"></script>
+	<script src="TurnAttempt.js"></script>
+
+	<script src="MarkerFilter.js"></script>
+	<script src="TurnResultFilter.js"></script>
+
+	<script src="Sample/SampleGameResultService.js"></script>
+	<script src="Sample/SampleTurnService.js"></script>
+
+	<script src="GameCtrl.js"></script>
+
+	<script src="Scripts/angular.js"></script>
+
+</head>
+<body ng-app="sampleApp">
+
+	<h1>Sample Tic Tac Toe</h1>
+
+	<div ng-controller="GameCtrl">
+		<div ng-show="gameState.currentGameResult.isStillGoing">
+			<div class="game-square" ng-click="takeTurn(0, 0)">
+				<span>{{gameState.currentGame.board[0][0] | marker}}</span>
+			</div>
+			<div class="game-square" ng-click="takeTurn(0, 1)">
+				<span>{{gameState.currentGame.board[0][1] | marker}}</span>
+			</div>
+			<div class="game-square" ng-click="takeTurn(0, 2)">
+				<span>{{gameState.currentGame.board[0][2] | marker}}</span>
+			</div>
+			<div class="clear"></div>
+			<div class="game-square" ng-click="takeTurn(1, 0)">
+				<span>{{gameState.currentGame.board[1][0] | marker}}</span>
+			</div>
+			<div class="game-square" ng-click="takeTurn(1, 1)">
+				<span>{{gameState.currentGame.board[1][1] | marker}}</span>
+			</div>
+			<div class="game-square" ng-click="takeTurn(1, 2)">
+				<span>{{gameState.currentGame.board[1][2] | marker}}</span>
+			</div>
+			<div class="clear"></div>
+			<div class="game-square" ng-click="takeTurn(2, 0)">
+				<span>{{gameState.currentGame.board[2][0] | marker}}</span>
+			</div>
+			<div class="game-square" ng-click="takeTurn(2, 1)">
+				<span>{{gameState.currentGame.board[2][1] | marker}}</span>
+			</div>
+			<div class="game-square" ng-click="takeTurn(2, 2)">
+				<span>{{gameState.currentGame.board[2][2] | marker}}</span>
+			</div>
+			<div class="clear"></div>
+			<span ng-hide="gameState.currentTurnResult == 0">Move was <span>{{gameState.currentTurnResult | turnResult}}</span></span>
+			<br />
+			Who's Turn is it: {{gameState.currentGame.whosTurnIsIt | marker}}
+			<br />
+			Current Turn <span>{{gameState.currentGame.currentTurn}}</span>
+
+		</div>
+
+		<div ng-hide="gameState.currentGameResult.isStillGoing">
+			<h2>Winner {{gameState.currentGameResult.whoWon | marker}}!</h2>
+			Total Games: {{gameState.previousGames.length + 1}}
+		</div>
+		
+		<button ng-click="resetGame()">Reset Game</button>
+	</div>
+
+	<script type="text/javascript">
+		var sampleApp = angular.module('sampleApp', []);
+
+		sampleApp.service('turnService', SampleTurnService);
+		sampleApp.service('gameResultService', SampleGameResultService);
+
+		sampleApp.controller('GameCtrl', GameCtrl);
+		sampleApp.filter('marker', MarkerFilter);
+		sampleApp.filter('turnResult', TurnResultFilter);
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Sample Tests</title>
+
+	<link rel="shortcut icon" type="image/png" href="lib/jasmine-2.2.0/jasmine_favicon.png">
+	<link rel="stylesheet" href="content/jasmine.css">
+
+	<script type="text/javascript" src="scripts/jasmine.js"></script>
+	<script type="text/javascript" src="scripts/jasmine-html.js"></script>
+	<script type="text/javascript" src="scripts/console.js"></script>
+	<script type="text/javascript" src="scripts/boot.js"></script>
+
+	<script src="GameBoard.js"></script>
+	<script src="Marker.js"></script>
+	<script src="GameResult.js"></script>
+	<script src="TurnResult.js"></script>
+	<script src="TurnAttempt.js"></script>
+
+	<script src="GameResultServiceTests.js"></script>
+	<script src="Yours/YourGameResultService.js"></script>
+
+	<script src="TurnServiceTests.js"></script>
+	<script src="Yours/YourTurnService.js"></script>
+</head>
+<body>
+	<h1>Sample Tests</h1>
+	<script type="text/javascript">
+		GameResultServiceTests(new YourGameResultService());
+		TurnServiceTests(new YourTurnService());
+	</script>
+</body>
+</html>
