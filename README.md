@@ -28,6 +28,12 @@ Bonus (*goes to 11*)
 * Display information about past matchs.
 * Tests proving your implementation.
 
+Demonstrates
+---
+* [TypeScript](http://www.typescriptlang.org/) - A general introduction to this superset of JavaScript, including using Enums, Interfaces, Classes and interacting with other libraries. 
+* Testing using [Triangulation](http://tobeagile.com/2009/12/08/triangulation/)
+* [Dependency Inversion Principle](http://en.wikipedia.org/wiki/Dependency_inversion_principle) in our controller and tests, allowing us a lot of reuse. 
+
 Hardmode
 ---
 Implement the above requirements from scratch (*File > New Project*).
