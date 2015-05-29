@@ -39,19 +39,19 @@
 
 					boardToWin('across top row',(game: Game) => {
 						game.board[0][0] = markerToWin;
-						game.board[1][0] = markerToWin;
-						game.board[2][0] = markerToWin;
+						game.board[0][1] = markerToWin;
+						game.board[0][2] = markerToWin;
 					});
 
 					boardToWin('across middle row',(game: Game) => {
-						game.board[0][1] = markerToWin;
+						game.board[1][0] = markerToWin;
 						game.board[1][1] = markerToWin;
-						game.board[2][1] = markerToWin;
+						game.board[1][2] = markerToWin;
 					});
 
 					boardToWin('across bottom row',(game: Game) => {
-						game.board[0][2] = markerToWin;
-						game.board[1][2] = markerToWin;
+						game.board[2][0] = markerToWin;
+						game.board[2][1] = markerToWin;
 						game.board[2][2] = markerToWin;
 					});
 
@@ -80,9 +80,9 @@
 					});
 
 					boardToWin('diagonal left bottom to right top',(game: Game) => {
-						game.board[0][2] = markerToWin;
-						game.board[1][1] = markerToWin;
 						game.board[2][0] = markerToWin;
+						game.board[1][1] = markerToWin;
+						game.board[0][2] = markerToWin;
 					});
 				});
 			}
