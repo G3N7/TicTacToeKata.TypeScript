@@ -67,7 +67,7 @@
 		</div>
 
 		<div ng-hide="gameState.currentGameResult.isStillGoing">
-			<h2>Winner {{gameState.currentGameResult.whoWon | marker}}!</h2>
+            <h2>{{gameState.currentWinnerText}}</h2>
 			Total Games: {{gameState.previousGames.length + 1}}
 		</div>
 		
