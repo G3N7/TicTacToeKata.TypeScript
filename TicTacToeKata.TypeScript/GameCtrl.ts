@@ -3,13 +3,19 @@
 		this.currentGame = new Game();
 		this.previousGames = [];
 		this.currentGameResult = new GameResult(false, false, Marker.Empty);
-		this.currentTurnResult = TurnResult.NotSet;
+        this.currentTurnResult = TurnResult.NotSet;
 	}
 
 	previousGames: Game[];
 	currentGame: Game;
 	currentTurnResult: TurnResult;
-	currentGameResult: GameResult;
+    currentGameResult: GameResult;
+
+    get currentWinnerText(): string {
+        return this.currentGameResult.whoWon == Marker.Empty
+            ? "No Winner!"
+            : "Winner " + Marker[this.currentGameResult.whoWon] + "!";
+    }
 }
 
 interface IGameCtrlScope extends ng.IScope {
@@ -34,5 +40,5 @@ function GameCtrl($scope: IGameCtrlScope, turnService: ITurnService, gameResultS
 		$scope.gameState.currentGame = new Game();
 		$scope.gameState.currentGameResult = new GameResult(false, false, Marker.Empty);
 		$scope.gameState.currentTurnResult = TurnResult.Valid;
-	};
+    };
 }

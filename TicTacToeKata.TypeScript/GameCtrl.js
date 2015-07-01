@@ -5,6 +5,13 @@ var GameCtrlState = (function () {
         this.currentGameResult = new GameResult(false, false, Marker.Empty);
         this.currentTurnResult = TurnResult.NotSet;
     }
+    Object.defineProperty(GameCtrlState.prototype, "currentWinnerText", {
+        get: function () {
+            return this.currentGameResult.whoWon == Marker.Empty ? "No Winner!" : "Winner " + Marker[this.currentGameResult.whoWon] + "!";
+        },
+        enumerable: true,
+        configurable: true
+    });
     return GameCtrlState;
 })();
 // ReSharper disable once InconsistentNaming
